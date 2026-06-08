@@ -1,30 +1,56 @@
 import { Link, Route, Routes } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
+import { GoGift } from "react-icons/go";
+import { LuUser } from "react-icons/lu";
+import AdminProductPage from "./admin/adminProductPage";
+import AdminAddproductFrom from "./admin/adminAddProductFrom";
+import AdminEditproductFrom from "./admin/adminEditProductFrom";
 
 export default function AdminPage(){
 
+    
+
     return(
-        <div className="w-full h-full bg-blue-300 flex">
+        <div className="w-full h-full bg-primary flex">
 
-            <div className="w-[300px] h-full bg-white flex flex-col ">
+            <div className="w-[300px] h-full bg-white flex flex-col shadow-2xl">
+                <div className="w-full h-[100px]  px-2 py-1 ">
 
-                <h1 className="w-full h-[50px] bg-amber-400 text-center text-xl font-bold">Using Anchor tags </h1>
-                    <a className="w-[100px] h-[50px] bg-blue-500 my-3" href ="/admin/">Orders</a>
-                    <a className="w-[100px] h-[50px] bg-blue-500 my-3" href ="/admin/products">Products</a>
-                    <a className="w-[100px] h-[50px] bg-blue-500 my-3" href ="/admin/users">Users</a>
+                    <img src = "/image.png" className=" h-full "/>
 
-                <h1 className="w-full h-[50px] bg-amber-400 text-center text-xl font-bold">Using Anchor tags </h1>
-                    <Link className="w-[100px] h-[50px] bg-blue-500 my-3" to ="/admin/">Orders</Link>
-                    <Link className="w-[100px] h-[50px] bg-blue-500 my-3" to ="/admin/products">Products</Link>
-                    <Link className="w-[100px] h-[50px] bg-blue-500 my-3" to ="/admin/users">Users</Link>
+                </div>
+
+                <Link to="/admin" className="w-full  p-4 text-accent flex items-center gap-4">
+                    <FiShoppingCart />
+                    <span className="w-full h-full">Orders</span>
+
+                </Link>
+
+                <Link to="/admin/products" className="w-full  p-4 text-accent  flex items-center gap-4">
+                    <GoGift />
+                    <span className="w-full h-full">Products</span>
+
+                </Link>
+
+                <Link to="/admin/users" className="w-full  p-4 text-accent  flex items-center gap-4">
+                    <LuUser/>
+                    <span className="w-full h-full">Users</span>
+
+                </Link>
+                
 
             </div>
 
-            <div className="w-[calc(100%-300px)] h-full bg-amber-200">
+            <div className="w-[calc(100%-300px)] h-full p-4">
                 <Routes>
 
                     <Route path='/' element={<h1>Order Page</h1>} />
-                    <Route path='/products' element={<h1>Product Page</h1>} />
+                    <Route path='/products' element={<AdminProductPage/>} />
                     <Route path='/users' element={<h1>Users Page</h1>} />
+                    <Route path='/add-product' element={<AdminAddproductFrom/>} />
+                    <Route path='/edit-product' element={<AdminEditproductFrom/>} />
+                    
+                    
 
 
 
