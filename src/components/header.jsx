@@ -1,5 +1,6 @@
 import { BiCart } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import UserData from "./userData";
 
 export default function Header(){
     return(
@@ -21,12 +22,14 @@ export default function Header(){
             </div>
             
 
-            <div className="w-[300px] h-full">
+            <div className="w-[300px] h-full flex justify-center items-center">
 
                 <Link to = "/cart" className="h-full flex justify-center items-center text-white hover:text-gray-900 px-4 cursor-pointer">
                     <BiCart size={24}></BiCart>
 
                 </Link>
+
+                <UserData />
 
 
             </div>

@@ -4,6 +4,7 @@ import ProductsPage from "./productsPage";
 import ProductOverview from "./productOverview";
 import CartPage from "./cartPage";
 import CheckoutPage from "./checkout";
+import MyOrdersPage from "./myOrdersPage";
 
 
 export default function HomePage(){
@@ -21,6 +22,7 @@ export default function HomePage(){
                     <Route path= "/overview/:productId" element={<ProductOverview/>}/>
                     <Route path= "/cart" element={<CartPage/>}/>
                     <Route path= "/checkout" element={<CheckoutPage/>}/>
+                    <Route path="/my-orders" element={<MyOrdersPage />} />
                 </Routes>
             </div>
         </div>
